@@ -11,7 +11,7 @@
     "adaptGameResolutionAtRuntime": true,
     "antialiasingMode": "MSAA",
     "antialisingEnabledOnMobile": false,
-    "folderProject": false,
+    "folderProject": true,
     "orientation": "landscape",
     "packageName": "com.example.gamename",
     "pixelsRounding": false,
@@ -20,8 +20,8 @@
     "sizeOnStartupMode": "adaptWidth",
     "templateSlug": "",
     "version": "1.0.0",
-    "name": "Numberless Spoon",
-    "description": "",
+    "name": "Honeyflower Platformer",
+    "description": "Ruin exploration platformer",
     "author": "",
     "windowWidth": 1280,
     "windowHeight": 720,
@@ -29,7 +29,35 @@
     "maxFPS": 60,
     "minFPS": 20,
     "verticalSync": false,
-    "platformSpecificAssets": {},
+    "platformSpecificAssets": {
+      "android-icon-144": "",
+      "android-icon-192": "",
+      "android-icon-36": "",
+      "android-icon-48": "",
+      "android-icon-72": "",
+      "android-icon-96": "",
+      "android-windowSplashScreenAnimatedIcon": "",
+      "desktop-icon-512": "",
+      "ios-icon-100": "",
+      "ios-icon-1024": "",
+      "ios-icon-114": "",
+      "ios-icon-120": "",
+      "ios-icon-144": "",
+      "ios-icon-152": "",
+      "ios-icon-167": "",
+      "ios-icon-180": "",
+      "ios-icon-20": "",
+      "ios-icon-29": "",
+      "ios-icon-40": "",
+      "ios-icon-50": "",
+      "ios-icon-57": "",
+      "ios-icon-58": "",
+      "ios-icon-60": "",
+      "ios-icon-72": "",
+      "ios-icon-76": "",
+      "ios-icon-80": "",
+      "ios-icon-87": ""
+    },
     "loadingScreen": {
       "backgroundColor": 0,
       "backgroundFadeInDuration": 0.2,
@@ -63,7 +91,52 @@
     "currentPlatform": "GDevelop JS platform"
   },
   "resources": {
-    "resources": []
+    "resources": [
+      {
+        "file": "assets/NewSprite.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "NewSprite",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/NewSprite2.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "NewSprite2",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Stone Platform.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Stone Platform.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pixel Adventure Pack/Terrain/8d43fc0268490e243d8a113c159d6e3a32cd6be05019ae18d7987e28802bfb87_Stone Platform.png",
+          "name": "Stone Platform.png"
+        }
+      },
+      {
+        "file": "explorer.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "explorer.jpg",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/NewSprite3.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "NewSprite3",
+        "smoothed": true,
+        "userAdded": false
+      }
+    ]
   },
   "objects": [],
   "objectsFolderStructure": {
@@ -71,8 +144,49 @@
   },
   "objectsGroups": [],
   "variables": [],
-  "layouts": [],
+  "layouts": [
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/layouts/untitled-scene"
+    }
+  ],
   "externalEvents": [],
+  "tests": [
+    {
+      "description": "Verifies the main character can move right, jump and fall using the default platformer controls.",
+      "lastRunAt": 1787085917120,
+      "lastRunDurationMs": 286,
+      "lastRunFramesExecuted": 287,
+      "lastRunStatus": "passed",
+      "name": "MainCharacter platformer movement",
+      "type": "gameplay",
+      "source": [
+        "await harness.goToScene('Untitled scene');",
+        "",
+        "// Probe horizontal movement (character starts in the air, so jump is tested separately).",
+        "const probe = await harness.resetSceneAndProbeControls('MainCharacter', ['Right', 'Left']);",
+        "harness.assert(probe.keys['Right'] && probe.keys['Right'].dx > 0, 'Right key moves the character right');",
+        "harness.assert(probe.keys['Left'] && probe.keys['Left'].dx < 0, 'Left key moves the character left');",
+        "",
+        "// Let the character fall and land on the ground.",
+        "await harness.stepFrames(150);",
+        "const startY = harness.getObjects('MainCharacter')[0].y;",
+        "",
+        "// Jump and verify it rises then falls back down.",
+        "harness.setKeyPressed('Space', true);",
+        "await harness.stepFrames(6);",
+        "harness.setKeyPressed('Space', false);",
+        "const peakY = harness.getObjects('MainCharacter')[0].y;",
+        "harness.assert(peakY < startY - 20, 'Character rises during jump (peakY ' + peakY + ' < startY ' + startY + ')');",
+        "",
+        "const landed = await harness.stepUntil(() => {",
+        "  const c = harness.getObjects('MainCharacter')[0];",
+        "  return c.y >= startY - 5;",
+        "}, { maxFrames: 180 });",
+        "harness.assert(landed, 'Character falls back down to the ground after jumping');"
+      ]
+    }
+  ],
   "eventsFunctionsExtensions": [],
   "externalLayouts": []
 }
