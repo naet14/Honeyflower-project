@@ -1,0 +1,12 @@
+{
+  "name": "Honeyflower Platformer invite only",
+  "short_name": "Honeyflower Platformer invite only",
+  "id": "com.example.gamename",
+  "description": "Ruin exploration platformer",
+  "orientation": "landscape",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "black",
+  "categories": ["games", "entertainment"],
+  "icons": []
+}
