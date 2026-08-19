@@ -143,6 +143,14 @@
         "name": "assets/MainCharacterJump.png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "file": "assets/MainCharacterJumping.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/MainCharacterJumping.png",
+        "smoothed": true,
+        "userAdded": false
       }
     ]
   },
