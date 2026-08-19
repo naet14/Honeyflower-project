@@ -135,6 +135,14 @@
         "name": "NewSprite3",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "file": "assets/MainCharacterJump.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/MainCharacterJump.png",
+        "smoothed": true,
+        "userAdded": false
       }
     ]
   },

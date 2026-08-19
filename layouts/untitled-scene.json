@@ -20,7 +20,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.546875,
+    "zoomFactor": 0.4481978045410356,
     "windowMask": false,
     "selectedLayer": "",
     "gameEditorMode": "instances-editor"
@@ -462,6 +462,22 @@
     },
     {
       "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "",
+      "name": "MainCharacter",
+      "persistentUuid": "54127439-50e4-4a0c-93a8-b4e8199764bb",
+      "width": 0,
+      "x": 1680,
+      "y": -20,
+      "zOrder": 1,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
       "customSize": true,
       "depth": 4,
       "height": 254,
@@ -471,7 +487,7 @@
       "persistentUuid": "00206ba1-8158-43f0-81c3-14554e978e5a",
       "width": 254,
       "x": 551,
-      "y": 366,
+      "y": 363,
       "zOrder": 2,
       "numberProperties": [],
       "stringProperties": [],
@@ -644,7 +660,7 @@
       ],
       "animations": [
         {
-          "name": "NewSprite",
+          "name": "Run",
           "useMultipleDirections": false,
           "directions": [
             {
@@ -655,6 +671,54 @@
                 {
                   "hasCustomCollisionMask": true,
                   "image": "NewSprite3",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 17,
+                        "y": 1
+                      },
+                      {
+                        "x": 48,
+                        "y": 1
+                      },
+                      {
+                        "x": 48,
+                        "y": 63
+                      },
+                      {
+                        "x": 17,
+                        "y": 63
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Fall",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets/MainCharacterJump.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -895,6 +959,33 @@
             "Animation",
             "=",
             "\"Fall\""
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "PlatformBehavior::IsOnFloor"
+          },
+          "parameters": [
+            "MainCharacter",
+            "PlatformerObject"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "AnimatableCapability::AnimatableBehavior::SetName"
+          },
+          "parameters": [
+            "MainCharacter",
+            "Animation",
+            "=",
+            "\"Run\""
           ]
         }
       ]
