@@ -1,7 +1,7 @@
 {
   "firstLayout": "",
   "gdVersion": {
-    "build": 279,
+    "build": 280,
     "major": 5,
     "minor": 6,
     "revision": 0
@@ -151,6 +151,98 @@
         "name": "assets/MainCharacterJumping.png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "file": "assets/Stone Flooring.webp",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/Stone Flooring.webp",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Stone Flooring.webp2.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\",\"pskl\":{}}",
+        "name": "assets/Stone Flooring.webp2",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Stone Flooring.webp2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/Stone Flooring.webp2.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "Running main char.png",
+        "kind": "image",
+        "metadata": "{\"localFilePath\":\"Running main char.png\",\"extension\":\".png\"}",
+        "name": "Running main char.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "wall.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "wall.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "wall2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "wall2.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "darkness2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "darkness2.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "wall3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "wall3.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ambientcg-tiles-130-color.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "ambientcg-tiles-130-color.jpg",
+        "smoothed": true,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/3D Cubes/AmbientCG/56ee5042b174b5eee589dee8347ffdf01a4d44ea34a464cad9c2979ed7dc122f_ambientcg-tiles-130-color.jpg",
+          "name": "ambientcg-tiles-130-color.jpg"
+        }
+      },
+      {
+        "file": "bd5c91802829e635386f1d110cb649ab79d57ebcd3d1b0d67dd5d1ac42c711d9-Stone Flooring.webp2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "bd5c91802829e635386f1d110cb649ab79d57ebcd3d1b0d67dd5d1ac42c711d9-Stone Flooring.webp2.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/wall.png2.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\",\"pskl\":{}}",
+        "name": "wall.png2",
+        "smoothed": true,
+        "userAdded": false
       }
     ]
   },
@@ -203,6 +295,11 @@
       ]
     }
   ],
-  "eventsFunctionsExtensions": [],
+  "eventsFunctionsExtensions": [
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/parallax"
+    }
+  ],
   "externalLayouts": []
 }
