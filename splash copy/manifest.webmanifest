@@ -1,0 +1,12 @@
+{
+  "name": "Honeyflower Platformer",
+  "short_name": "Honeyflower Platformer",
+  "id": "com.example.gamename",
+  "description": "Ruin exploration platformer",
+  "orientation": "landscape",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "black",
+  "categories": ["games", "entertainment"],
+  "icons": []
+}
